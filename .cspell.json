@@ -1,0 +1,36 @@
+{
+    "language": "en,es-ES",
+    "ignoreRegExpList": [
+        "/^[0-9a-fA-F]{24}$/g"
+    ],
+    "words": [
+        "alessi",
+        "autopopulate",
+        "bloqueante",
+        "bson",
+        "decrementa",
+        "decrementar",
+        "deserializa",
+        "dtos",
+        "enrutador",
+        "enrutadores",
+        "escalabilidad",
+        "hasheada",
+        "killall",
+        "mantenible",
+        "mantenibilidad",
+        "mongorestore",
+        "mongosh",
+        "netlify",
+        "paginación",
+        "pasarle",
+        "renderiza",
+        "renderizar",
+        "resave",
+        "serializa",
+        "sergio",
+        "swal",
+        "twilio",
+        "virtuals"
+    ]
+}
