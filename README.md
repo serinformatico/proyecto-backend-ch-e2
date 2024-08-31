@@ -33,23 +33,23 @@ Para instalar y ejecutar el proyecto, sigue estos pasos:
     ``` sh
     git clone https://github.com/serinformatico/proyecto-backend-ch-e2
     ```
-1. Navega al directorio del proyecto:
+3. Navega al directorio del proyecto:
     ``` sh
     cd proyecto-backend-ch-e2
     ```
-1. Instala las dependencias del proyecto:
+4. Instala las dependencias del proyecto:
     ``` sh
     npm install
     ```
-1. Inicia el servidor en modo desarrollo:
+5. Inicia el servidor en modo desarrollo:
     ``` sh
     npm run dev
     ```
-1. En caso de ser necesario, restaurar la base de datos:
+6. En caso de ser necesario, restaurar la base de datos:
     ``` sh
     mongorestore --uri="mongodb+srv://tuUsername:tuPassword@tuCluster/" --nsInclude="proyectoBackendChE2.*" --drop --gzip ./backups
     ```
-1. Abre el proyecto en Visual Studio Code:
+7. Abre el proyecto en Visual Studio Code:
     ``` sh
     code .
     ```
