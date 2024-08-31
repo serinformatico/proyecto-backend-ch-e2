@@ -1,8 +1,8 @@
 import passport from "passport";
 import { Strategy as JwtStrategy, ExtractJwt } from "passport-jwt";
-import UserManager from "../managers/user.manager.js";
+import UserService from "../services/user.service.js";
 
-const userManager = new UserManager();
+const userService = new UserService();
 
 export const config = (server) => {
     // Opciones para la estrategia JWT basada en el encabezado Authorization
@@ -20,7 +20,7 @@ export const config = (server) => {
     // Función que maneja el inicio de sesión
     const handleLogin = async (payload, done) => {
         try {
-            const userFound = await userManager.getOneById(payload.id);
+            const userFound = await userService.findOneById(payload.id);
             return done(null, userFound);
         } catch (error) {
             return done(null, false, { message: error.message });

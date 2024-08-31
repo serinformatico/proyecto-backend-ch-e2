@@ -70,9 +70,7 @@ const productSchema = new Schema({
 // Middleware que elimina la referencia en los carritos al eliminar el producto.
 productSchema.pre("deleteOne", async function(next) {
     try {
-        const Cart = model("carts");
-
-        await Cart.updateMany(
+        await model("carts").updateMany(
             { "products.product": this._id },
             { $pull: { products: { product: this._id } } },
         );

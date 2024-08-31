@@ -91,15 +91,21 @@ El proyecto tiene la siguiente estructura de directorios:
 └── src/
     ├── config/                # Archivos de configuración del proyecto.
     ├── constants/             # Constantes utilizadas en el proyecto.
+    ├── controllers/           # Controladores de endpoints.
+    ├── daos/                  # Objetos de acceso al almacenamiento de datos.
+    │   └── mongodb/           # DAO exclusivo para MongoDB.
+    │       └── models/        # Modelos de datos y esquemas de Mongoose.
+    ├── dtos/                  # Objetos de transferencia entre capas.
     ├── managers/              # Gestión y lógica de negocios.
     ├── middlewares/           # Archivos de interceptores.
-    ├── models/                # Modelos de datos y esquemas de Mongoose.
     ├── public/                # Archivos estáticos públicos.
     │   ├── css/               # Estilos empleados en el FrontEnd.
     │   ├── icons/             # Iconos utilizados en el FrontEnd.
     │   ├── images/            # Imágenes de los productos.
     │   └── js/                # Archivos de JavaScript para el FrontEnd.
-    ├── routes/                # Rutas del FrontEnd y Backend.
+    ├── repositories/          # Repositorios de entidades.
+    ├── services/              # Servicios para la lógica de negocio.
+    ├── routers/               # Enrutadores del FrontEnd y Backend.
     │   └── api/               # Rutas específicas de API.
     ├── utils/                 # Utilidades y funciones auxiliares.
     └── views/                 # Vistas y plantillas para el FrontEnd.

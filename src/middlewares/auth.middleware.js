@@ -1,9 +1,9 @@
 import jwt from "jsonwebtoken";
 import passport from "passport";
-import UserManager from "../managers/user.manager.js";
+import UserService from "../services/user.service.js";
 import { JWT_TRANSLATIONS } from "../constants/messages.constant.js";
 
-const userManager = new UserManager();
+const userService = new UserService();
 
 // Middleware para generar un token de acceso para un usuario autenticado
 export const generateToken = async (req, res, next) => {
@@ -11,10 +11,10 @@ export const generateToken = async (req, res, next) => {
         const { email, password } = req.body;
 
         // Busca al usuario por email y contraseña
-        const userFound = await userManager.getOneByEmailAndPassword(email, password);
+        const userFound = await userService.findOneByEmailAndPassword(email, password);
 
         // Genera un token JWT que expira en 2 horas
-        const token = jwt.sign({ id: userFound._id }, process.env.SECRET_KEY, { expiresIn: "2h" });
+        const token = jwt.sign({ id: userFound.id }, process.env.SECRET_KEY, { expiresIn: "2h" });
 
         // Coloca el token en el request
         req.token = token;
@@ -44,7 +44,7 @@ export const checkAuth = (req, res, next) => {
         }
 
         // Guarda información del usuario en la request para posterior su uso
-        req.id = user._id;
+        req.id = user.id;
         req.roles = user.roles;
         req.email = user.email;
 
